@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './stylesheets/index.css';
-
+import './assets/css/argon-design-system-react.css';
+import "./assets/vendor/nucleo/css/nucleo.css";
 ReactDOM.render(
   <React.StrictMode>
     <App />
