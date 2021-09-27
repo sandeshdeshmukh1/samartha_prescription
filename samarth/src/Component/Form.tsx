@@ -1,8 +1,9 @@
-import React from 'react';
-import { Col, Row, Form,Button, FormGroup, Label, Input , InputGroupAddon,
+import React , { useEffect }  from 'react'
+import { Col, Row, Form,Button, Container,FormGroup, Label, Input , InputGroupAddon,
   InputGroupText,
   InputGroup } from 'reactstrap';
 import { useForm } from './useForm';
+import { MedicineTable } from './medicineTable';
 
 // interface FormProps {
 //   name:string;
@@ -16,7 +17,7 @@ import { useForm } from './useForm';
 // }
 
 
-export const FormContainer = (props:any) => {
+export const FormContainer:any = (props:any) => {
   const initialState = {
     name:"",
     diagnosis:"",
@@ -31,12 +32,17 @@ export const FormContainer = (props:any) => {
     loginUserCallback,
     initialState
   );
- 
   async function loginUserCallback() {
+    // const totalItem = values;
     
-      console.log(values);
-  }
+    
+    console.log(values);
+    // console.log(initialState.medicineArray);
+ }
+
+
   return (
+    <>
     <Form className="form" onSubmit={onSubmit} >
       <Row form>
         <Col md={6}>
@@ -128,6 +134,10 @@ export const FormContainer = (props:any) => {
         </Col>
       </Row>
     </Form>
+
+      <MedicineTable items={values}></MedicineTable>
+   
+    </>
   );
 }
 
